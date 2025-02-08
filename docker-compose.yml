@@ -1,0 +1,11 @@
+services:
+  nextcloud:
+    image: nextcloud@sha256:855246390e5247e13492570ac4db8ee427fe426d536912aaaa8b50956059b974
+    container_name: nextcloud
+    restart: always
+    ports:
+      - "8100:80"
+    volumes:
+      - ./data:/var/www/html
+    environment:
+      - NEXTCLOUD_TRUSTED_DOMAINS=earthbase.local 192.168.1.101 192.168.1.102
